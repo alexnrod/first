@@ -8,25 +8,11 @@ $ServiceUserName = "_tfsservice"
 
 # Delete Test run Deployment (older then 1 Week) folders exclude Results folders
 
-$PathToDelete = "C:\Users\$ServiceUserName\AppData\Local\VSEQT\QTController"
-$ExcludeFolder = "Results"
-
-$targets = @(Get-ChildItem $PathToDelete -Exclude $ExcludeFolder | Where {$_.psIsContainer -eq $true -and $_.CreationTime -lt $DateForCompare1})
-
-if ($targets.Count -ne 0)
-{
-	"Deleting:"
-	$targets
-	$targets | Remove-Item -Recurse -Force
-}
-
-# Delete test run Results folders older than 2 Weeks
-
-$targets = @(Get-ChildItem $PathToDelete | Where {$_.psIsContainer -eq $true -and $_.CreationTime -lt $DateForCompare2})
-
-if ($targets.Count -ne 0)
-{
-	"Deleting:"
-	$targets
-	$targets | Remove-Item -Recurse -Force
-}
+##################### GitHub collection name: git@github.com:alexnrod #####################
+##################### GitHub repo name: first.git #####################
+##################### TFS server collection name: dev.azure.com/alexanderrodionov #####################
+##################### TFS project name: Azure%20DevOps%20Sandbox #####################
+##################### TFS repo name: first.git #####################
+##################### Current branch name: release #####################
+##################### cloning first.git github repo to the local build agent repo, branch: release #####################
+#### run git clone git@github.com:alexnrod/first.git release
