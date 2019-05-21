@@ -1,7 +1,6 @@
 # Variables
 # Delete the buld Artifacts older than:
 $DateForCompare1 = (Get-Date).AddDays(-7)
-$DateForCompare2 = (Get-Date).AddDays(-14)
 $ServiceUserName = "_tfsservice"
 
 # I divided the deletion for the Deployment and Result folders only for the example
